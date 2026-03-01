@@ -15,10 +15,14 @@ void score_catcher(int whole_score) {
     int the_sum_pts, Safety, FG, TD, TD_1pt_FG, TD_2pts;
 
     for (TD_2pts = 0; TD_2pts <= whole_score/8; TD_2pts++) {
-        // Loop runs for how many times you could add the 8 point in the score to match the
-        // total point.
+        /* Loop runs for how many times you could add the 8 point in the score to match the
+        total point. */
         for (TD_1pt_FG = 0; TD_1pt_FG <= whole_score/7; TD_1pt_FG++) {
+        /* Loop runs for how many times you could add the 7 point in the score to match the
+        total point. after the loop has run for TD_2pts. */
+            for () {
 
+            }
         
 
         }
