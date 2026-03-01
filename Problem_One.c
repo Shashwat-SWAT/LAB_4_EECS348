@@ -12,20 +12,28 @@ int switch_case;
 
 void score_catcher(int whole_score) {
 
-    int the_sum_pts, Safety, FG, TD, TD_1pt_FG, TD_2pts, is_the_sum_possible = 1;
+    int the_sum_pts, Safety, FG, TD, TD_1pt_FG, TD_2pts;
 
-    while (the_sum_pts != whole_score) {
+    for (TD_2pts = 0; TD_2pts <= whole_score/8; TD_2pts++) {
+        // Loop runs for how many times you could add the 8 point in the score to match the
+        // total point.
+        for (TD_1pt_FG = 0; TD_1pt_FG <= whole_score/7; TD_1pt_FG++) {
 
-        if (is_the_sum_possible) {
-            the_sum_pts = (Safety*2) + (FG*3) + (TD*6) + (TD_1pt_FG*7) + (TD_2pts*8);
+        
+
         }
 
     }
     
 }
 
+            // if (the_sum_pts == whole_score) {
+            //     the_sum_pts = (Safety*2) + (FG*3) + (TD*6) + (TD_1pt_FG*7) + (TD_2pts*8);
+            //     //Multiplying the points value each with their number.
+            // }
+
 int main() {
-    int score, possible_pts[4];
+    int score;
 
 
     printf("Enter a value less than 2 to stop the program.");
