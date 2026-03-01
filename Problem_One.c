@@ -8,43 +8,19 @@
 • Safety worth 2 points
 */
 
-// score(odd) - (even point)nearest even multiplicant - 1 + One odd score
-// score(even) - (odd point)nearest odd multiplicant - 1 + One even score
+int switch_case;
 
+void score_catcher(int whole_score) {
 
-int TD_2pts() {
-    
-}
+    int the_sum_pts, Safety, FG, TD, TD_1pt_FG, TD_2pts, is_the_sum_possible = 1;
 
-int TD_1pt_FG() {
-    
-}
+    while (the_sum_pts != whole_score) {
 
-int TD() {
-    
-}
-
-int FG() {
-    
-}
-
-int Safety(int whole_score, int score_box[4]) {
-
-    int ODD_score = 1; // True
-
-    if ((whole_score%2) == 0) {
-        ODD_score = 0; // if it is divisible by 2 it is even, hence the value is False
-    }
-
-    for (int i =1; i<=whole_score; i++) {
-        if (ODD_score) {
-
+        if (is_the_sum_possible) {
+            the_sum_pts = (Safety*2) + (FG*3) + (TD*6) + (TD_1pt_FG*7) + (TD_2pts*8);
         }
+
     }
-
-}
-
-void printer() {
     
 }
 
@@ -56,8 +32,10 @@ int main() {
     printf("Enter the score: ");
     scanf("%d", &score);
 
-
     while (score > 2) {
-
+        
+        score_catcher(score);
+        printf("Enter the score: ");
+        scanf("%d", &score);
     }
 }
