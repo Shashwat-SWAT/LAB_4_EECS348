@@ -1,6 +1,20 @@
+#include <stdio.h>
+
 int temp_convert() {
-    //
+    
+    
 }
+
+/*
+1. float celsius_to_fahrenheit (float celsius)
+Converts Celsius to Fahrenheit using the formula: F = (9/5)C + 32
+2. float fahrenheit_to_celsius (float fahrenheit)
+Converts Fahrenheit to Celsius using the formula: C = (5/9)(F - 32)
+3. float celsius_to_kelvin (float celsius)
+Converts Celsius to Kelvin using the formula: K = C + 273.15
+4. float kelvin_to_celsius (float kelvin)
+Converts Kelvin to Celsius using the formula: C = K - 273.15
+*/
 
 int main() {
 
