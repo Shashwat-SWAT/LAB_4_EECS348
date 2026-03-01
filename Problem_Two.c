@@ -158,6 +158,33 @@ int same_type_enter(char*temp_in_type, char*temp_out_type) {
 
 }
 
+int same_type_check(char*temp_in_type, char*temp_out_type) {
+
+    char choice;
+    int condition = (((*temp_in_type == 'c') || (*temp_in_type == 'k') || (*temp_in_type == 'f')) && ((*temp_out_type == 'c') || (*temp_out_type == 'k') || (*temp_out_type == 'f')));
+    
+    // (((*temp_in_type == 'c') || (*temp_in_type == 'k') || (*temp_in_type == 'f')) && ((*temp_out_type == 'c') || (*temp_out_type == 'k') || (*temp_out_type == 'f')));
+    if (!(condition)) {
+        printf("Warning! Wrong input for either input and output type!");
+        choice = 'y';
+    }
+
+    if (choice == 'y') {
+        printf("Enter the initials (F,C,K), Choose the temperature scale of the input value (Fahrenheit, Celsius, or Kelvin): ");
+        scanf(" %c", temp_in_type);
+        *temp_in_type = tolower(*temp_in_type);
+        
+        printf("Enter the initials (F,C,K), Choose the temperature scale of the output value (Fahrenheit, Celsius, or Kelvin): ");
+        scanf(" %c", temp_out_type);
+        *temp_out_type = tolower(*temp_out_type);
+    }
+    
+    if (!(condition)) {
+        same_type_enter(temp_in_type, temp_out_type);
+    }
+
+}
+
 int main() {
 
     char temp_in, temp_out;
@@ -177,7 +204,9 @@ int main() {
     scanf("%f",temperature_in);
 
     temperature_out = temp_convert(temp_in, temp_out, temperature_in);
-    printf("%d");
+    printf("%2.2f %2c is %2.2f %2c", temperature_in, temp_in, temperature_out, temp_out);
+
+    caution_print(temp_in, temperature_in);
 
     return 0;
 }
