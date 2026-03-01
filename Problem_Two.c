@@ -134,6 +134,8 @@ int same_type_enter(char*temp_in_type, char*temp_out_type) {
 
     char choice;
 
+    type_check(temp_in_type, temp_out_type);
+
     if (*temp_in_type == *temp_out_type) {
         printf("Warning! You enetered the same type for input and output!");
         printf("Would you like to re-enter(Y/n): ");
@@ -158,7 +160,7 @@ int same_type_enter(char*temp_in_type, char*temp_out_type) {
 
 }
 
-int same_type_check(char*temp_in_type, char*temp_out_type) {
+int type_check(char*temp_in_type, char*temp_out_type) {
 
     char choice;
     int condition = (((*temp_in_type == 'c') || (*temp_in_type == 'k') || (*temp_in_type == 'f')) && ((*temp_out_type == 'c') || (*temp_out_type == 'k') || (*temp_out_type == 'f')));
@@ -180,8 +182,10 @@ int same_type_check(char*temp_in_type, char*temp_out_type) {
     }
     
     if (!(condition)) {
-        same_type_enter(temp_in_type, temp_out_type);
+        type_check(temp_in_type, temp_out_type);
     }
+
+    same_type_enter(temp_in_type, temp_out_type);
 
 }
 
@@ -197,6 +201,7 @@ int main() {
     printf("Enter the initials (F,C,K), Choose the temperature scale of the output value (Fahrenheit, Celsius, or Kelvin): ");
     scanf(" %c", &temp_out);
     temp_out = tolower(temp_out);
+
 
     same_type_enter(&temp_in, &temp_out);
     
