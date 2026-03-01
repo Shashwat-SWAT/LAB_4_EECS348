@@ -32,7 +32,8 @@ void score_catcher(int whole_score) {
                         //Multiplying the points value each with their number.
 
                         if (the_sum_pts == whole_score) {
-                            printf("");
+                            printf("%d - TD + 2pt, %d - TD + FG, %d - TD, %d - 3pt FG, %d - Safety\n", TD_2pts, TD_1pt_FG, TD, FG, Safety);
+                            printf("---------------------------------------------------------------\n");
                         }
                     }
                 }
@@ -47,14 +48,14 @@ int main() {
     int score;
 
 
-    printf("Enter a value less than 2 to stop the program.");
+    printf("Enter a value less than 2 to stop the program.\n");
     printf("Enter the score: ");
     scanf("%d", &score);
 
     while (score > 2) {
         
         score_catcher(score);
-        printf("Enter the score: ");
+        printf("\nEnter the score: ");
         scanf("%d", &score);
     }
 }
