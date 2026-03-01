@@ -110,23 +110,23 @@ void caution_print(char ini_tmp, float temp_val) {
     temp_val = any_to_Celcius(ini_tmp, temp_val);
     
     if (temp_val < 0) {
-
+        printf ("It is freezing outside! Better not go anywhere!");
     }
 
     else if ((temp_val >= 0) && (temp_val <= 10)) {
-
+        printf ("It's preety cold, wear a jacket before you head out.");
     }
 
-    else if ((temp_val >= 0) && (temp_val <= 10)) {
-
+    else if ((temp_val >= 10) && (temp_val <= 25)) {
+        printf ("Good waether today!");
     }
 
-    else if ((temp_val >= 0) && (temp_val <= 10)) {
-
+    else if ((temp_val >= 25) && (temp_val <= 35)) {
+        printf ("Dont forget the sunscreen!");
     }
 
     else {
-
+        printf ("Heat waves! Stay indoors!");
     }
 }
 
@@ -138,19 +138,21 @@ int same_type_enter(char*temp_in_type, char*temp_out_type) {
         printf("Warning! You enetered the same type for input and output!");
         printf("Would you like to re-enter(Y/n): ");
         choice = tolower(getchar());
+        scanf(" %c", &choice);
+        choice = tolower(choice);
     }
 
     if (choice == 'y') {
         printf("Enter the initials (F,C,K), Choose the temperature scale of the input value (Fahrenheit, Celsius, or Kelvin): ");
-        scanf("%c", temp_in_type);
+        scanf(" %c", temp_in_type);
         *temp_in_type = tolower(*temp_in_type);
         
         printf("Enter the initials (F,C,K), Choose the temperature scale of the output value (Fahrenheit, Celsius, or Kelvin): ");
-        scanf("%c", temp_out_type);
+        scanf(" %c", temp_out_type);
         *temp_out_type = tolower(*temp_out_type);
     }
     
-    if (*temp_in_type == *temp_out_type) {
+    if ((*temp_in_type == *temp_out_type) && (choice == 'y')) {
         same_type_enter(temp_in_type, temp_out_type);
     }
 
@@ -162,11 +164,11 @@ int main() {
     float temperature_in, temperature_out;
 
     printf("Enter the initials (F,C,K), Choose the temperature scale of the input value (Fahrenheit, Celsius, or Kelvin): ");
-    scanf("%s", &temp_in);
+    scanf("%c", &temp_in);
     temp_in = tolower(temp_in);
     
     printf("Enter the initials (F,C,K), Choose the temperature scale of the output value (Fahrenheit, Celsius, or Kelvin): ");
-    scanf("%s", &temp_out);
+    scanf(" %c", &temp_out);
     temp_out = tolower(temp_out);
 
     same_type_enter(&temp_in, &temp_out);
